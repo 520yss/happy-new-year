@@ -1,0 +1,12 @@
+.swiper {
+  width: 60%;
+  height: 80%;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+}
