@@ -417,18 +417,18 @@ if (!fullscreenEnabled()) {
 
 //第一次渲染是在状态机 init()中调用的
 function renderApp(state) {
-  const pauseBtnIcon = `#icon-${state.paused ? "play" : "pause"}`;
-  const soundBtnIcon = `#icon-sound-${soundEnabledSelector() ? "on" : "off"}`;
-  appNodes.pauseBtnSVG.setAttribute("href", pauseBtnIcon);
-  appNodes.pauseBtnSVG.setAttribute("xlink:href", pauseBtnIcon);
-  appNodes.soundBtnSVG.setAttribute("href", soundBtnIcon);
-  appNodes.soundBtnSVG.setAttribute("xlink:href", soundBtnIcon);
-  appNodes.controls.classList.toggle(
-    "hide",
-    state.menuOpen || state.config.hideControls
-  );
-  appNodes.canvasContainer.classList.toggle("blur", state.menuOpen);
-  appNodes.menu.classList.toggle("hide", !state.menuOpen);
+  // const pauseBtnIcon = `#icon-${state.paused ? "play" : "pause"}`;
+  // const soundBtnIcon = `#icon-sound-${soundEnabledSelector() ? "on" : "off"}`;
+  // appNodes.pauseBtnSVG.setAttribute("href", pauseBtnIcon);
+  // appNodes.pauseBtnSVG.setAttribute("xlink:href", pauseBtnIcon);
+  // appNodes.soundBtnSVG.setAttribute("href", soundBtnIcon);
+  // appNodes.soundBtnSVG.setAttribute("xlink:href", soundBtnIcon);
+  // appNodes.controls.classList.toggle(
+  //   "hide",
+  //   state.menuOpen || state.config.hideControls
+  // );
+  // appNodes.canvasContainer.classList.toggle("blur", state.menuOpen);
+  // appNodes.menu.classList.toggle("hide", !state.menuOpen);
   appNodes.finaleModeFormOption.style.opacity = state.config.autoLaunch
     ? 1
     : 0.32;
@@ -1172,23 +1172,23 @@ function handlePointerStart(event) {
   activePointerCount++;
   const btnSize = 50;
 
-  if (event.y < btnSize) {
-    if (event.x < btnSize) {
-      togglePause();
-      return;
-    }
-    if (
-      event.x > mainStage.width / 2 - btnSize / 2 &&
-      event.x < mainStage.width / 2 + btnSize / 2
-    ) {
-      toggleSound();
-      return;
-    }
-    if (event.x > mainStage.width - btnSize) {
-      toggleMenu();
-      return;
-    }
-  }
+  // if (event.y < btnSize) {
+  //   if (event.x < btnSize) {
+  //     togglePause();
+  //     return;
+  //   }
+  //   if (
+  //     event.x > mainStage.width / 2 - btnSize / 2 &&
+  //     event.x < mainStage.width / 2 + btnSize / 2
+  //   ) {
+  //     toggleSound();
+  //     return;
+  //   }
+  //   if (event.x > mainStage.width - btnSize) {
+  //     toggleMenu();
+  //     return;
+  //   }
+  // }
 
   if (!isRunning()) return;
 
